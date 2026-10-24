@@ -1,0 +1,33 @@
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+.mvn/wrapper/maven-wrapper.jar
+
+# Configuracoes locais e segredos
+config/local.properties
+.env
+.env.*
+!.env.example
+
+# Angular / Node
+node_modules/
+.angular/
+dist/
+coverage/
+test-results/
+playwright-report/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+# Configuracoes locais e segredos em qualquer pasta
+**/config/local.properties
+**/.env
+**/.env.*

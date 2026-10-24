@@ -1,3 +1,0 @@
-Java:124 métodos/construtores comJavadoc.
-SQL:392linhas explicadas.
-V1–V3 e banco/migrations idênticos byteporbyte àv0.3.

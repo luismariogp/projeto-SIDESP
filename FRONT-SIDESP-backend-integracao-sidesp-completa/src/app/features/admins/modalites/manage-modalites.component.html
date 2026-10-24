@@ -1,0 +1,45 @@
+<app-navbar-desktop-admin></app-navbar-desktop-admin>
+<app-banner></app-banner>
+
+<div class="card-container">
+    <p-card>
+        <h1 class="title-modality">Modalidades</h1>
+
+        <div class="search-modality-container">
+            <input pInputText type="text" placeholder="Buscar..." aria-label="Buscar modalidade" />
+            <button pButton aria-label="Nova modalidade" (click)="openNew()">
+                <i class="pi pi-plus"></i>
+            </button>
+        </div>
+
+        <div class="modality-filter">
+            <p-selectbutton [options]="filterOptions" [(ngModel)]="filter" optionLabel="label" optionValue="value"
+                [allowEmpty]="false" aria-label="Filtrar modalidades" />
+        </div>
+
+        <ul class="modality-list">
+            @for (modality of filteredModalities; track modality.id) {
+            <li>
+                <button type="button" class="modality-item" (click)="openModality(modality)">
+                    <span class="modality-icon" [style.background]="modality.iconBg" [style.color]="modality.iconColor">
+                        <i [class]="modality.icon"></i>
+                    </span>
+
+                    <span class="modality-info">
+                        <strong>{{ modality.name }}</strong>
+                        <span class="modality-meta">
+                            {{ modality.classesCount }} turmas · {{ modality.studentsCount }} alunos
+                        </span>
+                    </span>
+
+                    <i class="pi pi-chevron-right"></i>
+                </button>
+            </li>
+            } @empty {
+            <li class="modality-empty">Nenhuma modalidade encontrada.</li>
+            }
+        </ul>
+    </p-card>
+</div>
+
+<app-footer></app-footer>

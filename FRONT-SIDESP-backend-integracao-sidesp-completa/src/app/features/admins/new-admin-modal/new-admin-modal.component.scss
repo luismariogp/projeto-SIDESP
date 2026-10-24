@@ -1,0 +1,199 @@
+@use '../../../../styles/breakpoints.scss' as *;
+
+:host ::ng-deep {
+    .admin-dialog {
+        width: 100vw;
+        height: 100dvh;
+        max-height: 100dvh;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        background: #fff;
+
+        @include md {
+            width: 32rem;
+            height: auto;
+            max-height: 90vh;
+            border-radius: 0.75rem;
+        }
+    }
+
+    .admin-dialog .p-dialog-header,
+    .admin-dialog .p-dialog-content,
+    .admin-dialog .p-dialog-footer {
+        background: transparent;
+        border: none;
+        padding-inline: 1.25rem;
+
+        @include md {
+            padding-inline: 1.5rem;
+        }
+    }
+
+    .admin-dialog .p-dialog-header {
+        padding-block: 1rem 0.5rem;
+    }
+
+    .admin-dialog .p-dialog-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--color-text-primary);
+    }
+
+    .admin-dialog .p-dialog-content {
+        padding-block: 0.5rem 1.5rem;
+    }
+
+    .admin-dialog .p-dialog-footer {
+        display: flex;
+        gap: 0.5rem;
+        padding-block: 0.75rem 1rem;
+        border-top: 0.0625rem solid var(--gray-300);
+
+        >p-button {
+            flex: 1;
+
+            button {
+                width: 100%;
+            }
+        }
+
+        @include md {
+            justify-content: flex-end;
+
+            >p-button {
+                flex: 0 0 auto;
+
+                button {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .admin-form {
+
+        .p-inputtext,
+        .p-select,
+        .p-inputmask,
+        .p-datepicker,
+        .p-password,
+        .p-password input {
+            width: 100%;
+        }
+    }
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-form-title {
+    margin: 0.75rem 0 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.admin-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+
+    label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--color-text-secondary);
+    }
+}
+
+.admin-field-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include sm {
+        flex-direction: row;
+
+        >.admin-field {
+            flex: 1 1 0;
+        }
+    }
+}
+
+.admin-field-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+}
+
+.admin-field-hint,
+.admin-field-error {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.admin-field-hint {
+    color: var(--color-text-muted);
+}
+
+.admin-field-error {
+    color: var(--color-danger);
+}
+
+.admin-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    >p-tag {
+        align-self: flex-start;
+    }
+}
+
+.admin-detail-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .admin-form-title {
+        margin: 0;
+    }
+}
+
+.admin-detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    margin: 0;
+}
+
+.admin-detail-item {
+    dt {
+        font-size: 0.75rem;
+        color: var(--color-text-secondary);
+    }
+
+    dd {
+        margin: 0.125rem 0 0;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--color-text-primary);
+        overflow-wrap: anywhere;
+    }
+}
+
+.admin-detail-action {
+    align-self: flex-start;
+}
